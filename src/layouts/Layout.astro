@@ -21,36 +21,170 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	:root{
-		--color-primary: #FA3135;
-		--color-secondary: #Fd8c84;
+	:root {
+		--primary: #fa3135;
+		--secondary: #fd8c84;
+		--clr-accent-400: #fd8c80; /* hsl(12, 88%, 59%); */
+		--clr-accent-300: rgb(224, 0, 108) /*hsl(129, 93%, 32%)*/;
+		--clr-accent-100: hsl(249, 41%, 52%);
+
+		--clr-primary-400: hsl(228, 39%, 23%);
+
+		--clr-neutral-100: hsl(232, 12%, 13%);
+		--clr-neutral-900: hsl(0, 0%, 0%);
+
+		--ff-primary: "Be Viertnam Pro", sans-serif;
+		--ff-body: var(--ff-primary);
+		--ff-heading: var(--f-primary);
+
+		--fw-regular: 400;
+		--fw-semi-bold: 500;
+		--fw-bold: 700;
+
+		--fs-300: 0.8125rem;
+		--fs-400: 0.875rem;
+		--fs-500: 0.9375rem;
+		--fs-600: 1rem;
+		--fs-650: 1.5rem;
+		--fs-700: 1.875rem;
+		--fs-750: 2rem;
+		--fs-800: 2.5rem;
+		--fs-900: 3.5rem;
+		--fs-body: var(--fs-400);
+		--fs-primary-heading: var(--fs-800);
+		--fs-secondary-heading: var(--fs-700);
+		--fs-nav: var(--fs-500);
+		--fs-button: var(--fs-300);
+
+		/* Media query utilizada para cambiar las fuentes en las distintas medidas */
 	}
 
-	/* *,::before,::after {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
+	body {
+		--min-width: 20em;
+		font-size: var(--fs-body);
+		font-family: var(--ff-body);
+		color: var(--clr-primary-400);
+		background-color: var(--secondary);
+	}
+
+	@media (width <= 375px) {
+		body {
+			font-size: var(--fs-600);
+		}
+		
+	}
+
+	@media (width >= 500px) {
+		#rrss{
+			right: min(1rem,2rem);
+		}
+		
+	}
+
+	@media (width >= 900px) {
+		body {
+			/* background-color: red; */
+			font-size: var(--fs-650);
+		}
+
+	}
+
+	/* Utilities */
+	.text-primary-400 {
+		color: var(--clr-primary-400);
+	}
+	.text-accent-400 {
+		color: var(--clr-accent-400);
+	}
+
+	.text-accent-300 {
+		color: var(--clr-accent-300);
+	}
+
+	.text-accent-100 {
+		color: var(--clr-accent-100);
+	}
+	.text-neutral-100 {
+		color: var(--clr-neutral-100);
+	}
+	.text-neutral-900 {
+		color: var(--clr-neutral-900);
+	}
+
+	.bg-primary-400 {
+		background-color: var(--clr-primary-400);
+	}
+	.bg-accent-400 {
+		background-color: var(--clr-accent-400);
+	}
+	.bg-accent-300 {
+		background-color: var(--clr-accent-300);
+	}
+
+	.bg-accent-100 {
+		background-color: var(--clr-accent-100);
+	}
+	.bg-neutral-100 {
+		background-color: var(--clr-neutral-100);
+	}
+	.bg-neutral-900 {
+		background-color: var(--clr-neutral-900);
+	}
+
+	.fw-bold {
+		font-weight: var(--fw-bold);
+	}
+	.fw-semi-bold {
+		font-weight: var(--fw-semi-bold);
+	}
+	.fw-regular {
+		font-weight: var(--fw-regular);
+	}
+
+	.fs-primary-heading {
+		font-size: var(--fs-primary-heading);
+	}
+	.fs-secondary-heading {
+		font-size: var(--fs-secondary-heading);
+	}
+
+	.fs-300 {
+		font-size: var(--fs-300);
+	}
+
+	.fs-400 {
+		font-size: var(--fs-400);
+	}
+
+	.fs-500 {
+		font-size: var(--fs-500);
+	}
+
+	.fs-600 {
+		font-size: var(--fs-600);
+	}
+
+	.fs-700 {
+		font-size: var(--fs-700);
+	}
+
+	.fs-750 {
+		font-size: var(--fs-750);
+	}
+
+	.fs-800 {
+		font-size: var(--fs-800);
+	}
+
+	.fs-900 {
+		font-size: var(--fs-900);
+	}
+
+	/* .container {
+		--max-width: 1110px;
+		--padding: 1rem;
+
+		width: min(var(--max-width), 100% - (var(--padding) * 2));
+		margin-inline: auto;
 	} */
-	
-	html {
-		font-family: system-ui, sans-serif;
-		width: 100%;
-		margin: 0 auto;
-	}
-
-	body{
-		background-color: white;
-	}
-
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
 </style>
